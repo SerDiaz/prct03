@@ -3,7 +3,7 @@ En el primero de los casos funciona correctamente, interpretando que significan 
 
 
 22. ¿Cómo funciona %q? ¿Qué es %q{hello world\n}? ¿Qué es %q{’a’ ’b’ ’c’}?
-En el primer caso muestra entre comillas el mensaje, aunque no reconoce el \\n. En el segundo muestra el array separdo de comullas simples.
+En el primer caso muestra entre comillas el mensaje, aunque no reconoce el separador. En el segundo muestra el array separdo de comillas simples.
 
 
 23. ¿Cómo funciona %Q? ¿Qué es %Q{hello world\n}? ¿Qué es %Q{"a" "b" "c"}?
@@ -23,12 +23,100 @@ En ese caso aparece sólo \n al final del mensaje y el segundo mensaje lo va mos
 
 29. "2 2 2 "
 
-30. Muestra por pantalla cada elemento separado
+30. Crea una cadena de caracteres.
 
-31. No entiende que es un separador y le añado otra "\" más.
+31. No entiende que es un tabulador y un separador y le añado otra "\" más.
 
-32. En ese caso si muestra separado cada separador bien.
+32. En ese caso si muestra separado cada el tabulador y el separador bien.
 
+33. Crea un nuevo array de 3 palabras en este caso "nils" ([nil, nil, nil])
+
+34. Aquí indicas mediante los parámetros que vas a colocar tres ceros.
+
+35. [[1, 2], [3, 4]]
+
+36. [0, 2, 4] 
+
+37. a[1,1] -> ["b"] 
+
+    a[-2,2]-> ["c", "d"]
+
+    a[0,2]-> ["a", "b"]
+
+    a[0..2]-> ["a", "b", "c"]
+
+    a[0..1]-> ["a", "b"]
+
+    a[-2..-1]-> ["a", "b"]
+
+38
+>> a
+=> ["a", "b", "c", "d", "e"]
+>> a[0,2] = %w{A B}
+=> ["A", "B"]
+>> a
+=>["A", "B", "c", "d"]
+>> a[2..5] = %w{C D E}
+=> ["C", "D", "E"]
+>> a
+=>["A", "B", "C", "D", "E"] 
+>> a[0,0] = [1,2,3]
+=> [1, 2, 3]
+>> a
+=>[1, 2, 3, "A", "B", "C", "D", "E"]
+>> a[0,2] = []
+=> []
+>> a
+=>[3, "A", "B", "C", "D", "E"] 
+>> a[-1,1] = [ ’Z’ ]
+=> ["Z"]
+>> a
+=>[3, "A", "B", "C", "D", "Z"] 
+>> a[-2,2] = nil
+=> nil
+>> a
+=>[3, "A", "B", "C", "D", nil] 
+
+39.
+
+>> a = (1...4).to_a
+=>[1, 2, 3]
+>> a = a + [4, 5]
+=>[1, 2, 3, 4, 5] 
+>> a += [[6, 7, 8]]
+=>[1, 2, 3, 4, 5, [6, 7, 8]] 
+>> a = a + 9
+=>TypeError: no implicit conversion of Fixnum into Array
+        from (irb):48:in `+'
+        from (irb):48
+        from /usr/local/rvm/rubies/ruby-2.0.0-p247/bin irb:13:in `<main>'
+
+40.
+
+>> x = %w{a b c b a}
+=>["a", "b", "c", "b", "a"] 
+>> x = x - %w{b c d}
+=>["a", "a"] 
+
+41.
+
+>> z = [0]*8
+=>[0, 0, 0, 0, 0, 0, 0, 0] 
+
+42.
+
+>> a = []
+=> []
+>> a << 1
+=>[1]
+>> a << 2 << 3
+=>a << 2 << 3
+>> a << [4, 5, 6]
+=>[1, 2, 3, [4, 5, 6]]
+>> a.concat [7, 8]
+=>[1, 2, 3, [4, 5, 6], 7, 8] 
+
+*No lo he terminado
 
 
 

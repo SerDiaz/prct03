@@ -1,0 +1,35 @@
+21. ¿Qué diferencia hay entre "\t\n" y ’\t\n’?
+En el primero de los casos funciona correctamente, interpretando que significan \t\n. Ahora, con las comillas simples no reconoce separador, mostrandolo tal cual en el mensaje.
+
+
+22. ¿Cómo funciona %q? ¿Qué es %q{hello world\n}? ¿Qué es %q{’a’ ’b’ ’c’}?
+En el primer caso muestra entre comillas el mensaje, aunque no reconoce el \\n. En el segundo muestra el array separdo de comullas simples.
+
+
+23. ¿Cómo funciona %Q? ¿Qué es %Q{hello world\n}? ¿Qué es %Q{"a" "b" "c"}?
+En ese caso aparece sólo \n al final del mensaje y el segundo mensaje lo va mostrando "\"a\"\"b\"\"\c""
+
+24."--4--\n--2--\n" 
+
+25."--\#{a}--\n--\#{b}--\n" 
+
+26.s[0,2] = "he"
+   s[-1,1] ="o"
+   s[0,10] ="hello"
+
+27. "..."
+
+28. "--\#{a}--\n--\#{b}--\n" 
+
+29. "2 2 2 "
+
+30. Muestra por pantalla cada elemento separado
+
+31. No entiende que es un separador y le añado otra "\" más.
+
+32. En ese caso si muestra separado cada separador bien.
+
+
+
+
+

@@ -265,10 +265,10 @@ RubJava => nil
 =>{:a=>1} 
 
 
-52.
+52. Yield cede el control al bloque.
 
-53.
+53. No hay ninguna diferencia
 
-54.
+54. ["hello", "world", "hello", "LPP"]
 
 55. Crea un array de valores, y a cada posición le asigna un valor. Luego hace una iteración mostrando todos los valores de "c".
